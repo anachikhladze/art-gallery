@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ArtGalleryView: View {
+    
+    // MARK: - Properties
     @State private var isActive = false
     @State private var selectedItem: GalleryItem?
     @State private var instructionsAlertShowing = false
@@ -17,6 +19,7 @@ struct ArtGalleryView: View {
         GridItem(.flexible())
     ]
     
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             VStack {
@@ -41,9 +44,10 @@ struct ArtGalleryView: View {
         .onAppear() {
             instructionsAlertShowing = true
         }
-
+        
     }
     
+    // MARK: - GalleryGrid
     private var galleryGrid: some View {
         LazyVGrid(columns: columns, spacing: 10) {
             ForEach(GalleryList.galleryList) { item in
@@ -63,6 +67,7 @@ struct ArtGalleryView: View {
         }
     }
     
+    // MARK: - Gestures
     private var doubleTap: some Gesture {
         TapGesture(count: 2)
             .onEnded { _ in

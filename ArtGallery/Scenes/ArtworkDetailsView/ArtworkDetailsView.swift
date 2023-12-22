@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ArtworkDetailsView: View {
     
+    // MARK: - Properties
     @State private var angle = Angle(degrees: 0.0)
     @GestureState private var magnifyBy = 1.0
     
     var item: GalleryItem
     
+    // MARK: - Body
     var body: some View {
         VStack {
             Image(item.image)
@@ -44,6 +46,7 @@ struct ArtworkDetailsView: View {
         }
     }
     
+    // MARK: - Gestures
     var rotation: some Gesture {
         RotateGesture()
             .onChanged { value in

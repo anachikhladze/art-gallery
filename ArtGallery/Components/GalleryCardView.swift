@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct GalleryCardView: View {
+    
+    // MARK: - Properties
     var item: GalleryItem
     
+    // MARK: - Body
     var body: some View {
         VStack(alignment: .center) {
             Image(item.image)

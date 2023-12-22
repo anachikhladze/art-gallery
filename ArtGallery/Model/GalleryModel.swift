@@ -7,26 +7,6 @@
 
 import Foundation
 
-enum Movement {
-    case baroque
-    case modernism
-    case renaissance
-    case postimpressionism
-    
-    var description: String {
-         switch self {
-         case .baroque:
-             return "Baroque"
-         case .modernism:
-             return "Modernism"
-         case .renaissance:
-             return "Renaissance"
-         case .postimpressionism:
-             return "Post-Impressionism"
-         }
-     }
-}
-
 struct GalleryItem: Identifiable {
     let id = UUID()
     let name: String
@@ -45,4 +25,24 @@ struct GalleryList {
         GalleryItem(name: "Lady with an Ermine", image: "image6", movement: .modernism, painter: "Leonardo da Vinci", info: "Lady with an Ermine is a portrait painted by Leonardo da Vinci around 1489-1490. The artwork features Cecilia Gallerani, a young woman in a striking pose, holding an ermine. Leonardo's meticulous attention to detail and his skill in capturing the sitter's expression contribute to the enduring allure of this portrait."),
         GalleryItem(name: "Music, Pink and Blue No. 2", image: "image5", movement: .renaissance, painter: "Georgia O'Keeffe", info: "Music, Pink and Blue No. 2 is a painting by the American modernist artist Georgia O'Keeffe, created in 1918. Known for her enlarged and abstracted depictions of flowers, Music, Pink and Blue No. 2 features O'Keeffe's characteristic use of vibrant colors and dynamic forms. The painting reflects O'Keeffe's innovative approach to depicting the beauty of the natural world.")
     ]
+}
+
+enum Movement {
+    case baroque
+    case modernism
+    case renaissance
+    case postimpressionism
+    
+    var description: String {
+        switch self {
+        case .baroque:
+            return "Baroque"
+        case .modernism:
+            return "Modernism"
+        case .renaissance:
+            return "Renaissance"
+        case .postimpressionism:
+            return "Post-Impressionism"
+        }
+    }
 }
